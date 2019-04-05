@@ -35,7 +35,7 @@ public class FXMLDocumentController implements Initializable {
 
     int p = 0;
     int q = 0;
-    int phi = 0;
+    int relativePrime = 0;
     int n = 0;
     
     static void SieveOfEratosthenes(int n, boolean isPrime[]) {
@@ -60,7 +60,6 @@ public class FXMLDocumentController implements Initializable {
     private void stepOneButtonClicked(ActionEvent event) {
         int flag = 0;
         long startTime = System.nanoTime();
-        long endTime = 0;
         double elapsed = 0;
         int nanoToMilis = 1000000;
         System.out.println("Button 1 Clicked");
@@ -68,14 +67,15 @@ public class FXMLDocumentController implements Initializable {
         n = Integer.parseInt(inputStep1.getText());
         // Generating primes using Sieve 
         boolean[] isPrime = new boolean[n + 1];
-        SieveOfEratosthenes(n, isPrime);
-            
+        SieveOfEratosthenes(n, isPrime);       
+        
         // Traversing all numbers to find first pair 
         for (int i = 2; i < n; i++) {
             int x = n / i;
 
             if (isPrime[i] && isPrime[x] && x != i && x * i == n) {
-                
+                p = i; 
+                q = x;
                 elapsed = (double)(System.nanoTime() - startTime) / nanoToMilis;
                 outputStep1.setText("p is " +i + "\nq is " + x + "\nelapsed: " + (elapsed) + " miliseconds");
                 flag = 1;
@@ -92,8 +92,24 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void stepTwoButtonClicked(ActionEvent event) {
         System.out.println("Button 2 Clicked");
-        int phi = (p - 1) * (q - 1);
-        outputStep2.setText("");
+       
+        relativePrime = getRelativePrime(p - 1, q - 1);
+        outputStep2.setText("relative prime is: " + relativePrime);
+    }
+    
+    private int getRelativePrime(int p, int q){
+        
+        int findRelativePrime = p * q;
+        boolean[] isPrime = new boolean[findRelativePrime + 1];
+        SieveOfEratosthenes(findRelativePrime, isPrime);
+        
+        for (int i = 0; i < isPrime.length; i++) {
+            if(isPrime[i]){
+                relativePrime = i;
+            }
+            
+        }
+        return relativePrime;
     }
 
     @Override
