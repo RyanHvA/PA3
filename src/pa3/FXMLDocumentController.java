@@ -8,6 +8,9 @@ package pa3;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
+import java.math.BigInteger;
+import java.util.ArrayList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -29,15 +32,21 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField inputStep2;
     @FXML
+    private TextField inputStep3;
+    @FXML
     private TextArea outputStep1;
     @FXML
     private TextArea outputStep2;
+    @FXML
+    private TextArea outputStep3;
 
     int p = 0;
     int q = 0;
     int relativePrime = 0;
     int n = 0;
-    
+    int m = 0;
+    String text;
+
     static void SieveOfEratosthenes(int n, boolean isPrime[]) {
         // Makes an boolean array with weather n is a prime or not
         isPrime[0] = isPrime[1] = false;
@@ -63,21 +72,21 @@ public class FXMLDocumentController implements Initializable {
         double elapsed = 0;
         int nanoToMilis = 1000000;
         System.out.println("Button 1 Clicked");
-        
+
         n = Integer.parseInt(inputStep1.getText());
         // Generating primes using Sieve 
         boolean[] isPrime = new boolean[n + 1];
-        SieveOfEratosthenes(n, isPrime);       
-        
+        SieveOfEratosthenes(n, isPrime);
+
         // Traversing all numbers to find first pair 
         for (int i = 2; i < n; i++) {
             int x = n / i;
 
             if (isPrime[i] && isPrime[x] && x != i && x * i == n) {
-                p = i; 
+                p = i;
                 q = x;
-                elapsed = (double)(System.nanoTime() - startTime) / nanoToMilis;
-                outputStep1.setText("p is " +i + "\nq is " + x + "\nelapsed: " + (elapsed) + " miliseconds");
+                elapsed = (double) (System.nanoTime() - startTime) / nanoToMilis;
+                outputStep1.setText("p is " + i + "\nq is " + x + "\nelapsed: " + (elapsed) + " miliseconds");
                 flag = 1;
                 return;
             }
@@ -86,33 +95,50 @@ public class FXMLDocumentController implements Initializable {
         if (flag == 0) {
             outputStep1.setText("No such pair found");
         }
-        
+
     }
 
     @FXML
     private void stepTwoButtonClicked(ActionEvent event) {
         System.out.println("Button 2 Clicked");
-       
+
         relativePrime = getRelativePrime(p - 1, q - 1);
         outputStep2.setText("e is: <" + relativePrime + ">");
     }
-    
-    private int getRelativePrime(int p, int q){
-        
+
+    private int getRelativePrime(int p, int q) {
+
         int findRelativePrime = p * q;
         boolean[] isPrime = new boolean[findRelativePrime + 1];
         SieveOfEratosthenes(findRelativePrime, isPrime);
-        
+
         for (int i = 0; i < isPrime.length; i++) {
-            if(isPrime[i]){
+            if (isPrime[i]) {
                 relativePrime = i;
             }
-            
+
         }
         return relativePrime;
     }
-    
-    
+
+    @FXML
+    private void stepThreeButtonClicked(ActionEvent event) {
+        System.out.println("Button 3 Clicked");
+        
+        n = Integer.parseInt(inputStep1.getText());
+        ArrayList<Integer> letters = new ArrayList<>();
+        text = inputStep3.getText();    
+        
+        for (int i = 0; i < text.length(); i++) {
+            BigInteger bigInteger = new BigInteger(String.valueOf((int) text.charAt(i)));
+            bigInteger = bigInteger.pow(relativePrime);
+            bigInteger = bigInteger.mod(new BigInteger(String.valueOf(n)));
+            letters.add(Integer.valueOf(bigInteger.toString()));
+        }
+        
+        outputStep3.setText("Message after encryption is: " + letters.toString());
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

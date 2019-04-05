@@ -46,7 +46,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Button layoutX="160.0" layoutY="478.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="70.0" text="Step 3" />
+            <Button fx:id="buttonStepTwo" layoutX="160.0" layoutY="478.0" mnemonicParsing="false" onAction="#stepThreeButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 3" />
             <TextArea fx:id="outputStep1" editable="false" layoutX="25.0" layoutY="147.0" prefHeight="83.0" prefWidth="204.0" wrapText="true" />
             <TextArea fx:id="outputStep2" editable="false" layoutX="23.0" layoutY="363.0" prefHeight="55.0" prefWidth="204.0" wrapText="true" />
          </children>
