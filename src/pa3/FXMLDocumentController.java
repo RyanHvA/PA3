@@ -6,6 +6,7 @@
 package pa3;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,7 +37,7 @@ public class FXMLDocumentController implements Initializable {
     int q = 0;
     int phi = 0;
     int n = 0;
-
+    
     static void SieveOfEratosthenes(int n, boolean isPrime[]) {
         // Makes an boolean array with weather n is a prime or not
         isPrime[0] = isPrime[1] = false;
@@ -58,20 +59,25 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void stepOneButtonClicked(ActionEvent event) {
         int flag = 0;
-        
+        long startTime = System.nanoTime();
+        long endTime = 0;
+        double elapsed = 0;
+        int nanoToMilis = 1000000;
         System.out.println("Button 1 Clicked");
         
         n = Integer.parseInt(inputStep1.getText());
         // Generating primes using Sieve 
         boolean[] isPrime = new boolean[n + 1];
         SieveOfEratosthenes(n, isPrime);
-
+            
         // Traversing all numbers to find first pair 
         for (int i = 2; i < n; i++) {
             int x = n / i;
 
             if (isPrime[i] && isPrime[x] && x != i && x * i == n) {
-                outputStep1.setText("p is " +i + "\nq is " + x);
+                
+                elapsed = (double)(System.nanoTime() - startTime) / nanoToMilis;
+                outputStep1.setText("p is " +i + "\nq is " + x + "\nelapsed: " + (elapsed) + " miliseconds");
                 flag = 1;
                 return;
             }
