@@ -94,7 +94,7 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("Button 2 Clicked");
        
         relativePrime = getRelativePrime(p - 1, q - 1);
-        outputStep2.setText("relative prime is: " + relativePrime);
+        outputStep2.setText("e is: <" + relativePrime + ">");
     }
     
     private int getRelativePrime(int p, int q){
@@ -111,7 +111,8 @@ public class FXMLDocumentController implements Initializable {
         }
         return relativePrime;
     }
-
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
