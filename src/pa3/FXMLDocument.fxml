@@ -23,8 +23,8 @@
             </Label>
             <Button fx:id="buttonStepOne" layoutX="160.0" layoutY="86.0" mnemonicParsing="false" onAction="#stepOneButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 1" />
             <TextField fx:id="inputStep1" layoutX="25.0" layoutY="87.0" prefHeight="31.0" prefWidth="116.0" />
-            <Button fx:id="buttonStepTwo" layoutX="157.0" layoutY="310.0" mnemonicParsing="false" onAction="#stepTwoButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 2" />
-            <Label layoutX="25.0" layoutY="342.0" text="Output">
+            <Button fx:id="buttonStepTwo" layoutX="157.0" layoutY="283.0" mnemonicParsing="false" onAction="#stepTwoButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 2" />
+            <Label layoutX="25.0" layoutY="315.0" text="Output">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -48,7 +48,7 @@
             </Label>
             <Button fx:id="buttonStepTwo" layoutX="160.0" layoutY="478.0" mnemonicParsing="false" onAction="#stepThreeButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 3" />
             <TextArea fx:id="outputStep1" editable="false" layoutX="25.0" layoutY="147.0" prefHeight="83.0" prefWidth="204.0" wrapText="true" />
-            <TextArea fx:id="outputStep2" editable="false" layoutX="23.0" layoutY="363.0" prefHeight="55.0" prefWidth="204.0" wrapText="true" />
+            <TextArea fx:id="outputStep2" editable="false" layoutX="23.0" layoutY="336.0" prefHeight="55.0" prefWidth="204.0" wrapText="true" />
          </children>
       </Pane>
       <Pane layoutX="250.0" prefHeight="600.0" prefWidth="250.0">
@@ -56,6 +56,35 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c18395" height="600.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb99b2" height="55.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
             <Text layoutX="89.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Decryption" />
+            <TextField fx:id="inputStep4e" layoutX="42.0" layoutY="84.0" prefHeight="31.0" prefWidth="99.0" />
+            <Button fx:id="buttonStepFour" layoutX="162.0" layoutY="123.0" mnemonicParsing="false" onAction="#stepFourButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 1" />
+            <Button fx:id="buttonStepFive" layoutX="157.0" layoutY="430.0" mnemonicParsing="false" onAction="#stepFiveButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 2" />
+            <TextField fx:id="inputStep4n" layoutX="42.0" layoutY="124.0" prefHeight="31.0" prefWidth="99.0" />
+            <Label layoutX="21.0" layoutY="89.0" text="n" />
+            <Label layoutX="21.0" layoutY="130.0" text="e" />
+            <Label layoutX="13.0" layoutY="64.0" text="Input">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="320.0" text="Input">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="450.0" text="Output">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="inputStep5" editable="false" layoutX="23.0" layoutY="341.0" prefHeight="83.0" prefWidth="204.0" wrapText="true" />
+            <TextArea fx:id="outputStep5" editable="false" layoutX="23.0" layoutY="471.0" prefHeight="114.0" prefWidth="204.0" wrapText="true" />
+            <TextArea fx:id="outputStep4" editable="false" layoutX="23.0" layoutY="190.0" prefHeight="40.0" prefWidth="204.0" wrapText="true" />
+            <Label layoutX="20.0" layoutY="169.0" text="Output">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

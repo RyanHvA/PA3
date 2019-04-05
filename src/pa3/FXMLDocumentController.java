@@ -24,13 +24,9 @@ import javafx.scene.control.TextArea;
  * @author Ryan J Z
  */
 public class FXMLDocumentController implements Initializable {
-
-    @FXML
-    private Button buttonStepOne;
+    //encryt
     @FXML
     private TextField inputStep1;
-    @FXML
-    private TextField inputStep2;
     @FXML
     private TextField inputStep3;
     @FXML
@@ -39,7 +35,19 @@ public class FXMLDocumentController implements Initializable {
     private TextArea outputStep2;
     @FXML
     private TextArea outputStep3;
-
+    
+    //decrypt
+    @FXML
+    private TextField inputStep4e;
+    @FXML
+    private TextField inputStep4n;
+    @FXML
+    private TextArea outputStep4;
+    @FXML
+    private TextArea inputStep5;
+    @FXML
+    private TextArea outputStep5;
+    
     int p = 0;
     int q = 0;
     int relativePrime = 0;
@@ -138,7 +146,16 @@ public class FXMLDocumentController implements Initializable {
         
         outputStep3.setText("Message after encryption is: " + letters.toString());
     }
-
+    
+    @FXML
+    private void stepFourButtonClicked(ActionEvent event) {
+        System.out.println("Button 4 Clicked");   
+    }
+    
+    @FXML
+    private void stepFiveButtonClicked(ActionEvent event) {
+        System.out.println("Button 5 Clicked");   
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
