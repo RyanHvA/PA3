@@ -32,20 +32,23 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextArea outputStep2;
     
+    int p = 0;
+    int q = 0;
+    int e = 0;
     
     @FXML
     private void stepOneButtonClicked(ActionEvent event) {
         System.out.println("Button 1 Clicked");
-        int p = 0;
-        int q = 0;
         outputStep1.setText("p is " + p + "\nq is " + q);
     }
     
     @FXML
     private void stepTwoButtonClicked(ActionEvent event) {
         System.out.println("Button 2 Clicked");
+        int e = (p-1) * (q-1);
         System.out.println(inputStep2.getText());
-        outputStep2.setText("t werkt!");
+        
+        outputStep2.setText("e is "+ e);
     }
     
     @Override
