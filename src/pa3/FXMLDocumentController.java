@@ -53,6 +53,7 @@ public class FXMLDocumentController implements Initializable {
     int relativePrime = 0;
     int n = 0;
     int m = 0;
+    int d = 0;
     String text;
 
     static void SieveOfEratosthenes(int n, boolean isPrime[]) {
@@ -149,7 +150,39 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void stepFourButtonClicked(ActionEvent event) {
-        System.out.println("Button 4 Clicked");   
+        
+        int e = Integer.parseInt(inputStep4e.getText());
+        
+        //step 1 encrypt
+        int flag = 0;
+        
+        System.out.println("Button 1 Clicked");
+
+        n = Integer.parseInt(inputStep4e.getText());
+        // Generating primes using Sieve 
+        boolean[] isPrime = new boolean[n + 1];
+        SieveOfEratosthenes(n, isPrime);
+
+        // Traversing all numbers to find first pair 
+        for (int i = 2; i < n; i++) {
+            int x = n / i;
+
+            if (isPrime[i] && isPrime[x] && x != i && x * i == n) {
+                p = i;
+                q = x;
+                outputStep4.setText("p is " + i + "\nq is " + x + "\nelapsed: ");
+                flag = 1;
+                return;
+            }
+        }
+        
+        
+        if (flag == 0) {
+            outputStep1.setText("No such pair found");
+        }
+        
+        System.out.println(p + " en " + q); // GEEFT NIKS AAN
+        
     }
     
     @FXML
