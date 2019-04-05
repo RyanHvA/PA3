@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pa3.FXMLDocumentController">
+   <children>
+      <Pane layoutY="-1.0" prefHeight="600.0" prefWidth="250.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8396c1" height="600.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a6bef2" height="55.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+            <Text layoutX="90.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encryption" />
+            <Label layoutX="25.0" layoutY="126.0" text="Output">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonStepOne" layoutX="160.0" layoutY="86.0" mnemonicParsing="false" onAction="#stepOneButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 1" />
+            <TextField fx:id="inputStep1" layoutX="25.0" layoutY="87.0" prefHeight="31.0" prefWidth="116.0" />
+            <Button fx:id="buttonStepTwo" layoutX="157.0" layoutY="310.0" mnemonicParsing="false" onAction="#stepTwoButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 2" />
+            <Label layoutX="25.0" layoutY="342.0" text="Output">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="inputStep2" layoutX="25.0" layoutY="311.0" prefHeight="31.0" prefWidth="116.0" />
+            <Label layoutX="25.0" layoutY="66.0" text="Input">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="290.0" text="Input">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="outputStep3" editable="false" layoutX="23.0" layoutY="531.0" prefHeight="55.0" prefWidth="204.0" wrapText="true" />
+            <Label layoutX="25.0" layoutY="510.0" text="Output">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="inputStep3" layoutX="25.0" layoutY="479.0" prefHeight="31.0" prefWidth="116.0" />
+            <Label layoutX="25.0" layoutY="458.0" text="Input">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="160.0" layoutY="478.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="70.0" text="Step 3" />
+            <TextArea fx:id="outputStep1" editable="false" layoutX="25.0" layoutY="147.0" prefHeight="83.0" prefWidth="204.0" wrapText="true" />
+            <TextArea fx:id="outputStep2" editable="false" layoutX="23.0" layoutY="363.0" prefHeight="55.0" prefWidth="204.0" wrapText="true" />
+         </children>
+      </Pane>
+      <Pane layoutX="250.0" prefHeight="600.0" prefWidth="250.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c18395" height="600.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb99b2" height="55.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
+            <Text layoutX="89.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Decryption" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
