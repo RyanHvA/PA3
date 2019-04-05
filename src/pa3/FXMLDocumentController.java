@@ -150,9 +150,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void stepFourButtonClicked(ActionEvent event) {
-        
-        int e = Integer.parseInt(inputStep4e.getText());
-        
+    
         //step 1 encrypt
         int flag = 0;
         
@@ -170,9 +168,8 @@ public class FXMLDocumentController implements Initializable {
             if (isPrime[i] && isPrime[x] && x != i && x * i == n) {
                 p = i;
                 q = x;
-                outputStep4.setText("p is " + i + "\nq is " + x + "\nelapsed: ");
+                
                 flag = 1;
-                return;
             }
         }
         
@@ -180,9 +177,10 @@ public class FXMLDocumentController implements Initializable {
         if (flag == 0) {
             outputStep1.setText("No such pair found");
         }
-        
-        System.out.println(p + " en " + q); // GEEFT NIKS AAN
-        
+        int x = ((p-1) * (q-1) - 1) / Integer.parseInt(inputStep4e.getText());
+        d = ((p-1) * (q-1)) - x;
+        System.out.println(d); 
+        outputStep4.setText("d value is: " + d);
     }
     
     @FXML
