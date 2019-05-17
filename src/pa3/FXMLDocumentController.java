@@ -157,26 +157,6 @@ public class FXMLDocumentController implements Initializable {
        
         n = Integer.parseInt(inputStep4n.getText());
         BigInteger e = BigInteger.valueOf(Integer.parseInt(inputStep4e.getText()));
-        // Generating primes using Sieve 
-        boolean[] isPrime = new boolean[n + 1];
-        SieveOfEratosthenes(n, isPrime);
-
-        // Traversing all numbers to find first pair 
-        for (int i = 2; i < n; i++) {
-            int x = n / i;
-
-            if (isPrime[i] && isPrime[x] && x != i && x * i == n) {
-                p = i;
-                q = x;
-                
-                flag = 1;
-            }
-        }
-        
-        
-        if (flag == 0) {
-            outputStep1.setText("No such pair found");
-        }
         
         BigInteger lol = BigInteger.valueOf((p-1) * (q-1));
        
