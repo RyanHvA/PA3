@@ -130,7 +130,6 @@ public class FXMLDocumentController implements Initializable {
                     break;
                 }
             }
-
         }
         return relativePrime;
     }
@@ -158,9 +157,7 @@ public class FXMLDocumentController implements Initializable {
     
         //step 1 encrypt
         int flag = 0;
-        
-        System.out.println("Button 1 Clicked");
-
+       
         n = Integer.parseInt(inputStep4n.getText());
         BigInteger e = BigInteger.valueOf(Integer.parseInt(inputStep4e.getText()));
         // Generating primes using Sieve 
@@ -187,7 +184,7 @@ public class FXMLDocumentController implements Initializable {
         BigInteger lol = BigInteger.valueOf((p-1) * (q-1));
        
         bi3 = e.modInverse(lol);
-        outputStep4.setText("D is <" + bi3.toString() + "");
+        outputStep4.setText("D is <" + bi3.toString() + ">");
         
     }
     
@@ -201,16 +198,11 @@ public class FXMLDocumentController implements Initializable {
         BigInteger[] m = new BigInteger[encryptedMessage.length];
         for (int i = 0; i < encryptedMessage.length; i++) {
             m[i] = BigInteger.valueOf(Integer.parseInt(encryptedMessage[i]));
-        }
-       
-        for (int i = 0; i < m.length; i++) {
             m[i] = m[i].pow(bi3.intValue());
             m[i] = m[i].mod(BigInteger.valueOf(n));
-            System.out.println(m[i]);
+            decryptedMessage += (char) m[i].intValue();
         }
-//        for (int i = 0; i < k.length; i++) {
-//            System.out.println(k[i]);
-//        }
+       outputStep5.setText(decryptedMessage);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
