@@ -44,7 +44,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextArea outputStep4;
     @FXML
-    private TextArea inputStep5;
+    private TextField inputStep5;
     @FXML
     private TextArea outputStep5;
     
@@ -55,6 +55,7 @@ public class FXMLDocumentController implements Initializable {
     int m = 0;
     int d = 0;
     String text;
+    BigInteger bi3;
 
     static void SieveOfEratosthenes(int n, boolean isPrime[]) {
         // Makes an boolean array with weather n is a prime or not
@@ -120,10 +121,14 @@ public class FXMLDocumentController implements Initializable {
         int findRelativePrime = p * q;
         boolean[] isPrime = new boolean[findRelativePrime + 1];
         SieveOfEratosthenes(findRelativePrime, isPrime);
-
+        int count = 0;
         for (int i = 0; i < isPrime.length; i++) {
             if (isPrime[i]) {
                 relativePrime = i;
+                count++;
+                if (count == 4){
+                    break;
+                }
             }
 
         }
@@ -141,7 +146,7 @@ public class FXMLDocumentController implements Initializable {
         for (int i = 0; i < text.length(); i++) {
             BigInteger bigInteger = new BigInteger(String.valueOf((int) text.charAt(i)));
             bigInteger = bigInteger.pow(relativePrime);
-            bigInteger = bigInteger.mod(new BigInteger(String.valueOf(n)));
+            bigInteger = bigInteger.mod(BigInteger.valueOf(n));
             letters.add(Integer.valueOf(bigInteger.toString()));
         }
         
@@ -156,7 +161,8 @@ public class FXMLDocumentController implements Initializable {
         
         System.out.println("Button 1 Clicked");
 
-        n = Integer.parseInt(inputStep4e.getText());
+        n = Integer.parseInt(inputStep4n.getText());
+        BigInteger e = BigInteger.valueOf(Integer.parseInt(inputStep4e.getText()));
         // Generating primes using Sieve 
         boolean[] isPrime = new boolean[n + 1];
         SieveOfEratosthenes(n, isPrime);
@@ -177,15 +183,34 @@ public class FXMLDocumentController implements Initializable {
         if (flag == 0) {
             outputStep1.setText("No such pair found");
         }
-        int x = ((p-1) * (q-1) - 1) / Integer.parseInt(inputStep4e.getText());
-        d = ((p-1) * (q-1)) - x;
-        System.out.println(d); 
-        outputStep4.setText("d value is: " + d);
+        
+        BigInteger lol = BigInteger.valueOf((p-1) * (q-1));
+       
+        bi3 = e.modInverse(lol);
+        outputStep4.setText("D is <" + bi3.toString() + "");
+        
     }
     
     @FXML
     private void stepFiveButtonClicked(ActionEvent event) {
-        System.out.println("Button 5 Clicked");   
+        String test = inputStep5.getText();
+        test = test.replace("[", "").replace("]", "");
+        String[] encryptedMessage = test.split(", ");
+        String decryptedMessage = "";
+        int[] k = new int[encryptedMessage.length];
+        BigInteger[] m = new BigInteger[encryptedMessage.length];
+        for (int i = 0; i < encryptedMessage.length; i++) {
+            m[i] = BigInteger.valueOf(Integer.parseInt(encryptedMessage[i]));
+        }
+       
+        for (int i = 0; i < m.length; i++) {
+            m[i] = m[i].pow(bi3.intValue());
+            m[i] = m[i].mod(BigInteger.valueOf(n));
+            System.out.println(m[i]);
+        }
+//        for (int i = 0; i < k.length; i++) {
+//            System.out.println(k[i]);
+//        }
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

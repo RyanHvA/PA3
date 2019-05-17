@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.shape.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pa3.FXMLDocumentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pa3.FXMLDocumentController">
    <children>
       <Pane layoutY="-1.0" prefHeight="600.0" prefWidth="250.0">
          <children>
@@ -56,10 +57,10 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c18395" height="600.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb99b2" height="55.0" stroke="BLACK" strokeType="INSIDE" width="250.0" />
             <Text layoutX="89.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Decryption" />
-            <TextField fx:id="inputStep4e" layoutX="42.0" layoutY="84.0" prefHeight="31.0" prefWidth="99.0" />
+            <TextField fx:id="inputStep4n" layoutX="42.0" layoutY="84.0" prefHeight="31.0" prefWidth="99.0" />
             <Button fx:id="buttonStepFour" layoutX="162.0" layoutY="123.0" mnemonicParsing="false" onAction="#stepFourButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 1" />
             <Button fx:id="buttonStepFive" layoutX="157.0" layoutY="430.0" mnemonicParsing="false" onAction="#stepFiveButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 2" />
-            <TextField fx:id="inputStep4n" layoutX="42.0" layoutY="124.0" prefHeight="31.0" prefWidth="99.0" />
+            <TextField fx:id="inputStep4e" layoutX="42.0" layoutY="124.0" prefHeight="31.0" prefWidth="99.0" />
             <Label layoutX="21.0" layoutY="89.0" text="n" />
             <Label layoutX="21.0" layoutY="130.0" text="e" />
             <Label layoutX="13.0" layoutY="64.0" text="Input">
@@ -77,7 +78,6 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextArea fx:id="inputStep5" editable="false" layoutX="23.0" layoutY="341.0" prefHeight="83.0" prefWidth="204.0" wrapText="true" />
             <TextArea fx:id="outputStep5" editable="false" layoutX="23.0" layoutY="471.0" prefHeight="114.0" prefWidth="204.0" wrapText="true" />
             <TextArea fx:id="outputStep4" editable="false" layoutX="23.0" layoutY="190.0" prefHeight="40.0" prefWidth="204.0" wrapText="true" />
             <Label layoutX="20.0" layoutY="169.0" text="Output">
@@ -85,6 +85,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
+            <TextField fx:id="inputStep5" layoutX="23.0" layoutY="353.0" prefHeight="68.0" prefWidth="204.0" />
          </children>
       </Pane>
    </children>
