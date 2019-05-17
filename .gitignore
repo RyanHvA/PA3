@@ -5,3 +5,9 @@ dist/*
 dist\*
 build/*
 build\*
+build/built-jar.properties
+build/classes/pa3/FXMLDocument.fxml
+build/classes/pa3/FXMLDocumentController.class
+dist/PA3.jnlp
+dist/PA3.jar
+dist/PA3.html

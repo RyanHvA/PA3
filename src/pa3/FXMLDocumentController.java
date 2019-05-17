@@ -6,7 +6,6 @@
 package pa3;
 
 import java.net.URL;
-import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -14,9 +13,7 @@ import java.util.ArrayList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
 /**
@@ -113,7 +110,7 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("Button 2 Clicked");
 
         relativePrime = getRelativePrime(p - 1, q - 1);
-        outputStep2.setText("e is: <" + relativePrime + ">");
+        outputStep2.setText("e is <" + relativePrime + ">");
     }
 
     private int getRelativePrime(int p, int q) {
@@ -184,7 +181,7 @@ public class FXMLDocumentController implements Initializable {
         BigInteger lol = BigInteger.valueOf((p-1) * (q-1));
        
         bi3 = e.modInverse(lol);
-        outputStep4.setText("D is <" + bi3.toString() + ">");
+        outputStep4.setText("e is <" + bi3.toString() + ">");
         
     }
     
@@ -206,7 +203,6 @@ public class FXMLDocumentController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }
 
 }

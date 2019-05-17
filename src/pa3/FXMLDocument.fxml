@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -10,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pa3.FXMLDocumentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pa3.FXMLDocumentController">
    <children>
       <Pane layoutY="-1.0" prefHeight="600.0" prefWidth="250.0">
          <children>
@@ -22,10 +27,10 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Button fx:id="buttonStepOne" layoutX="160.0" layoutY="86.0" mnemonicParsing="false" onAction="#stepOneButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 1" />
-            <TextField fx:id="inputStep1" layoutX="25.0" layoutY="87.0" prefHeight="31.0" prefWidth="116.0" />
-            <Button fx:id="buttonStepTwo" layoutX="157.0" layoutY="283.0" mnemonicParsing="false" onAction="#stepTwoButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 2" />
-            <Label layoutX="25.0" layoutY="315.0" text="Output">
+            <Button fx:id="buttonStepOne" layoutX="160.0" layoutY="86.0" mnemonicParsing="false" onAction="#stepOneButtonClicked" prefHeight="21.0" prefWidth="70.0" text="Step 1" />
+            <TextField fx:id="inputStep1" layoutX="53.0" layoutY="87.0" prefHeight="31.0" prefWidth="88.0" />
+            <Button fx:id="buttonStepTwo" layoutX="160.0" layoutY="284.0" mnemonicParsing="false" onAction="#stepTwoButtonClicked" prefHeight="21.0" prefWidth="70.0" text="Step 2" />
+            <Label layoutX="25.0" layoutY="262.0" text="Output">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -35,21 +40,22 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextArea fx:id="outputStep3" editable="false" layoutX="23.0" layoutY="531.0" prefHeight="55.0" prefWidth="204.0" wrapText="true" />
-            <Label layoutX="25.0" layoutY="510.0" text="Output">
+            <TextArea fx:id="outputStep3" editable="false" layoutX="23.0" layoutY="490.0" prefHeight="96.0" prefWidth="204.0" wrapText="true" />
+            <Label layoutX="25.0" layoutY="461.0" text="Output">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="inputStep3" layoutX="25.0" layoutY="479.0" prefHeight="31.0" prefWidth="116.0" />
-            <Label layoutX="25.0" layoutY="458.0" text="Input">
+            <TextField fx:id="inputStep3" layoutX="25.0" layoutY="368.0" prefHeight="80.0" prefWidth="204.0" promptText="message (c)" />
+            <Label layoutX="25.0" layoutY="345.0" text="Input">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Button fx:id="buttonStepTwo" layoutX="160.0" layoutY="478.0" mnemonicParsing="false" onAction="#stepThreeButtonClicked" prefHeight="34.0" prefWidth="70.0" text="Step 3" />
-            <TextArea fx:id="outputStep1" editable="false" layoutX="25.0" layoutY="147.0" prefHeight="83.0" prefWidth="204.0" wrapText="true" />
-            <TextArea fx:id="outputStep2" editable="false" layoutX="23.0" layoutY="336.0" prefHeight="55.0" prefWidth="204.0" wrapText="true" />
+            <Button fx:id="buttonStepTwo" layoutX="160.0" layoutY="454.0" mnemonicParsing="false" onAction="#stepThreeButtonClicked" prefHeight="21.0" prefWidth="70.0" text="Step 3" />
+            <TextArea fx:id="outputStep1" editable="false" layoutX="25.0" layoutY="147.0" prefHeight="108.0" prefWidth="204.0" wrapText="true" />
+            <TextArea fx:id="outputStep2" editable="false" layoutX="26.0" layoutY="285.0" prefHeight="31.0" prefWidth="128.0" wrapText="true" />
+            <Label layoutX="35.0" layoutY="91.0" text="n" />
          </children>
       </Pane>
       <Pane layoutX="250.0" prefHeight="600.0" prefWidth="250.0">
@@ -68,7 +74,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="23.0" layoutY="320.0" text="Input">
+            <Label layoutX="23.0" layoutY="279.0" text="Input">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
@@ -85,7 +91,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="inputStep5" layoutX="23.0" layoutY="353.0" prefHeight="68.0" prefWidth="204.0" />
+            <TextField fx:id="inputStep5" layoutX="23.0" layoutY="300.0" prefHeight="121.0" prefWidth="204.0" promptText="[code, code]" />
          </children>
       </Pane>
    </children>
